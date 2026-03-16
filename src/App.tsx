@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/sections/HeroSection';
 import { ExplorePage } from '@/pages/ExplorePage';
@@ -202,7 +202,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div style={{ minHeight: '100vh', backgroundColor: '#0a0a0f' }}>
         <Navbar currentUser={currentUser} onLogout={logout} />
         <Routes>
@@ -250,7 +250,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
