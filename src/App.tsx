@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { HashRouter, Routes, Route, Navigate, Link, useNavigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/sections/HeroSection';
 import { ExplorePage } from '@/pages/ExplorePage';
@@ -17,7 +17,6 @@ interface HomePageProps {
 }
 
 function HomePage({ currentUser }: HomePageProps) {
-  const navigate = useNavigate();
   return (
     <main style={{ backgroundColor: '#0a0a0f', minHeight: '100vh' }}>
       <HeroSection currentUser={currentUser} />
@@ -99,43 +98,47 @@ function HomePage({ currentUser }: HomePageProps) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center', alignItems: 'center' }} className="sm:flex-row">
               {/* 发布需求：未登录或需求方时显示 */}
               {(!currentUser || currentUser.role === 'client') && (
-                <button
-                  onClick={() => navigate('/post')}
+                <a
+                  href="#/post"
                   style={{
-                    padding: '0.5rem 2rem',
-                    fontSize: '0.875rem',
+                    padding: '0.375rem 1.25rem',
+                    fontSize: '0.8125rem',
                     backgroundColor: '#d4edac',
                     color: 'black',
                     fontWeight: '500',
                     borderRadius: '9999px',
                     border: 'none',
                     cursor: 'pointer',
-                    width: '140px',
-                    flexShrink: 0
+                    width: 'auto',
+                    textDecoration: 'none',
+                    textAlign: 'center',
+                    display: 'inline-block'
                   }}
                 >
                   发布需求
-                </button>
+                </a>
               )}
               {/* 探索机会：未登录或开发者时显示 */}
               {(!currentUser || currentUser.role === 'developer') && (
-                <button
-                  onClick={() => navigate('/explore')}
+                <a
+                  href="#/explore"
                   style={{
-                    padding: '0.5rem 2rem',
-                    fontSize: '0.875rem',
+                    padding: '0.375rem 1.25rem',
+                    fontSize: '0.8125rem',
                     border: '1px solid rgba(255,255,255,0.2)',
                     color: 'white',
                     fontWeight: '500',
                     borderRadius: '9999px',
                     backgroundColor: 'transparent',
                     cursor: 'pointer',
-                    width: '140px',
-                    flexShrink: 0
+                    width: 'auto',
+                    textDecoration: 'none',
+                    textAlign: 'center',
+                    display: 'inline-block'
                   }}
                 >
                   探索机会
-                </button>
+                </a>
               )}
             </div>
           </div>
