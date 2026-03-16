@@ -102,17 +102,16 @@ function HomePage({ currentUser }: HomePageProps) {
                 <button
                   onClick={() => navigate('/post')}
                   style={{
-                    padding: '0.375rem 1.5rem',
-                    fontSize: '0.8125rem',
+                    padding: '0.5rem 2rem',
+                    fontSize: '0.875rem',
                     backgroundColor: '#d4edac',
                     color: 'black',
                     fontWeight: '500',
                     borderRadius: '9999px',
                     border: 'none',
                     cursor: 'pointer',
-                    display: 'inline-block',
-                    width: 'auto',
-                    minWidth: '120px'
+                    width: '140px',
+                    flexShrink: 0
                   }}
                 >
                   发布需求
@@ -123,17 +122,16 @@ function HomePage({ currentUser }: HomePageProps) {
                 <button
                   onClick={() => navigate('/explore')}
                   style={{
-                    padding: '0.375rem 1.5rem',
-                    fontSize: '0.8125rem',
+                    padding: '0.5rem 2rem',
+                    fontSize: '0.875rem',
                     border: '1px solid rgba(255,255,255,0.2)',
                     color: 'white',
                     fontWeight: '500',
                     borderRadius: '9999px',
                     backgroundColor: 'transparent',
                     cursor: 'pointer',
-                    display: 'inline-block',
-                    width: 'auto',
-                    minWidth: '120px'
+                    width: '140px',
+                    flexShrink: 0
                   }}
                 >
                   探索机会
