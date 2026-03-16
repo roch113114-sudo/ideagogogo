@@ -95,13 +95,13 @@ function HomePage({ currentUser }: HomePageProps) {
             <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '2rem', maxWidth: '36rem', marginLeft: 'auto', marginRight: 'auto' }}>
               加入 IDEAGOGOGO，与优秀的开发者一起，将你的创意转化为现实
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }} className="sm:flex-row">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center', alignItems: 'center' }}>
               {/* 发布需求：未登录或需求方时显示 */}
               {(!currentUser || currentUser.role === 'client') && (
                 <a
                   href="#/post"
                   style={{
-                    padding: '0.375rem 1.25rem',
+                    padding: '0.375rem 0',
                     fontSize: '0.8125rem',
                     backgroundColor: '#d4edac',
                     color: 'black',
@@ -109,11 +109,11 @@ function HomePage({ currentUser }: HomePageProps) {
                     borderRadius: '9999px',
                     border: 'none',
                     cursor: 'pointer',
-                    width: 'fit-content',
+                    width: '100px',
                     textDecoration: 'none',
                     textAlign: 'center',
-                    display: 'inline-block',
-                    alignSelf: 'center'
+                    display: 'block',
+                    flex: 'none'
                   }}
                 >
                   发布需求
@@ -124,7 +124,7 @@ function HomePage({ currentUser }: HomePageProps) {
                 <a
                   href="#/explore"
                   style={{
-                    padding: '0.375rem 1.25rem',
+                    padding: '0.375rem 0',
                     fontSize: '0.8125rem',
                     border: '1px solid rgba(255,255,255,0.2)',
                     color: 'white',
@@ -132,11 +132,11 @@ function HomePage({ currentUser }: HomePageProps) {
                     borderRadius: '9999px',
                     backgroundColor: 'transparent',
                     cursor: 'pointer',
-                    width: 'fit-content',
+                    width: '100px',
                     textDecoration: 'none',
                     textAlign: 'center',
-                    display: 'inline-block',
-                    alignSelf: 'center'
+                    display: 'block',
+                    flex: 'none'
                   }}
                 >
                   探索机会
