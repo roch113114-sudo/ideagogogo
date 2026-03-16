@@ -96,13 +96,13 @@ function HomePage({ currentUser }: HomePageProps) {
             <p style={{ color: 'rgba(255,255,255,0.6)', marginBottom: '2rem', maxWidth: '36rem', marginLeft: 'auto', marginRight: 'auto' }}>
               加入 IDEAGOGOGO，与优秀的开发者一起，将你的创意转化为现实
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center' }} className="sm:flex-row">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center', alignItems: 'center' }} className="sm:flex-row">
               {/* 发布需求：未登录或需求方时显示 */}
               {(!currentUser || currentUser.role === 'client') && (
                 <button
                   onClick={() => navigate('/post')}
                   style={{
-                    padding: '0.25rem 0.75rem',
+                    padding: '0.375rem 1.5rem',
                     fontSize: '0.8125rem',
                     backgroundColor: '#d4edac',
                     color: 'black',
@@ -110,7 +110,9 @@ function HomePage({ currentUser }: HomePageProps) {
                     borderRadius: '9999px',
                     border: 'none',
                     cursor: 'pointer',
-                    display: 'inline-block'
+                    display: 'inline-block',
+                    width: 'auto',
+                    minWidth: '120px'
                   }}
                 >
                   发布需求
@@ -121,7 +123,7 @@ function HomePage({ currentUser }: HomePageProps) {
                 <button
                   onClick={() => navigate('/explore')}
                   style={{
-                    padding: '0.25rem 0.75rem',
+                    padding: '0.375rem 1.5rem',
                     fontSize: '0.8125rem',
                     border: '1px solid rgba(255,255,255,0.2)',
                     color: 'white',
@@ -130,6 +132,8 @@ function HomePage({ currentUser }: HomePageProps) {
                     backgroundColor: 'transparent',
                     cursor: 'pointer',
                     display: 'inline-block',
+                    width: 'auto',
+                    minWidth: '120px'
                   }}
                 >
                   探索机会
