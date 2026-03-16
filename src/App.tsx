@@ -101,8 +101,8 @@ function HomePage({ currentUser }: HomePageProps) {
                 <Link
                   to="/post"
                   style={{
-                    padding: '0.5rem 1rem',
-                    fontSize: '0.8125rem',
+                    padding: '0.375rem 0.875rem',
+                    fontSize: '0.75rem',
                     backgroundColor: '#d4edac',
                     color: 'black',
                     fontWeight: '500',
@@ -119,8 +119,8 @@ function HomePage({ currentUser }: HomePageProps) {
                 <Link
                   to="/explore"
                   style={{
-                    padding: '0.5rem 1rem',
-                    fontSize: '0.8125rem',
+                    padding: '0.375rem 0.875rem',
+                    fontSize: '0.75rem',
                     border: '1px solid rgba(255,255,255,0.2)',
                     color: 'white',
                     fontWeight: '500',
