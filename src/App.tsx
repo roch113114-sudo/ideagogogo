@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { HashRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, Link, useNavigate } from 'react-router-dom';
 import { Navbar } from '@/components/Navbar';
 import { HeroSection } from '@/sections/HeroSection';
 import { ExplorePage } from '@/pages/ExplorePage';
@@ -17,6 +17,7 @@ interface HomePageProps {
 }
 
 function HomePage({ currentUser }: HomePageProps) {
+  const navigate = useNavigate();
   return (
     <main style={{ backgroundColor: '#0a0a0f', minHeight: '100vh' }}>
       <HeroSection currentUser={currentUser} />
@@ -98,40 +99,41 @@ function HomePage({ currentUser }: HomePageProps) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center' }} className="sm:flex-row">
               {/* 发布需求：未登录或需求方时显示 */}
               {(!currentUser || currentUser.role === 'client') && (
-                <Link
-                  to="/post"
+                <button
+                  onClick={() => navigate('/post')}
                   style={{
-                    padding: '0.375rem 0.875rem',
-                    fontSize: '0.75rem',
+                    padding: '0.25rem 0.75rem',
+                    fontSize: '0.8125rem',
                     backgroundColor: '#d4edac',
                     color: 'black',
                     fontWeight: '500',
                     borderRadius: '9999px',
-                    textDecoration: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
                     display: 'inline-block'
                   }}
                 >
                   发布需求
-                </Link>
+                </button>
               )}
               {/* 探索机会：未登录或开发者时显示 */}
               {(!currentUser || currentUser.role === 'developer') && (
-                <Link
-                  to="/explore"
+                <button
+                  onClick={() => navigate('/explore')}
                   style={{
-                    padding: '0.375rem 0.875rem',
-                    fontSize: '0.75rem',
+                    padding: '0.25rem 0.75rem',
+                    fontSize: '0.8125rem',
                     border: '1px solid rgba(255,255,255,0.2)',
                     color: 'white',
                     fontWeight: '500',
                     borderRadius: '9999px',
-                    textDecoration: 'none',
-                    display: 'inline-block',
                     backgroundColor: 'transparent',
+                    cursor: 'pointer',
+                    display: 'inline-block',
                   }}
                 >
                   探索机会
-                </Link>
+                </button>
               )}
             </div>
           </div>
